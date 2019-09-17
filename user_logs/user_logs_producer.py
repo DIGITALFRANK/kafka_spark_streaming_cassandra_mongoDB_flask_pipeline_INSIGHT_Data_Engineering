@@ -25,7 +25,6 @@ def tail_log_file(file):
             time.sleep(interval)
             file.seek(where)
         else:
-            line['timestamp'] = datetime.utcnow()
             yield line
 
 

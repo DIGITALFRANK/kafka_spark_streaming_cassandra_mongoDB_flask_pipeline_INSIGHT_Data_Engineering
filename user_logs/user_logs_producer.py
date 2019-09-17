@@ -6,10 +6,22 @@ from json import dumps
 from kafka import KafkaProducer
 
 
+"""
+CREATE KAFKA TOPIC
+$ /usr/local/kafka/bin/kafka-topics.sh \
+    --create \
+    --zookeeper localhost:2181 \
+    --replication-factor 3 \
+    --partitions 2 \
+    --topic test_topic 
+"""
+
+# producer
 user_logs_producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
                                    value_serializer=lambda x: json.dumps(x).encode('utf-8'))
 
-
+# help function to tail a log file, we might just 86 this and dynamically generate data in various ways
+# or use it, who knows!
 def tail_log_file(file):
     """
     - Reads all content from log file then tails file for incoming logs

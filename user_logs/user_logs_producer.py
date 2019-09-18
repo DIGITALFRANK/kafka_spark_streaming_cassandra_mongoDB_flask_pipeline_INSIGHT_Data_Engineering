@@ -6,43 +6,33 @@ from json import dumps
 from kafka import KafkaProducer
 
 
-# 1
-"""
-CREATE KAFKA TOPIC
+class UserLogsProducer:
+    def __init__(self, kafka_brokers):
+        """
+        Producer constructor, serializes json data
+        :param kafka_brokers: Str
+        """
+        self.producer = KafkaProducer(
+            value_serializer=lambda v: json.dumps(v).encode('utf-8'),
+            bootstrap_servers=kafka_brokers
+        )
 
-$ /usr/local/kafka/bin/kafka-topics.sh --create \
-    --zookeeper localhost:2181 \
-    --replication-factor 3 \
-    --partitions 4 \
-    --topic test_topic 
-"""
+    def send_log(self, json_log, topic):
+        """
+        Sends single log to kafka topic as encoded json
+        Requires source, use on iterable to dynamically populate kafka topic
+        :param json_log: Json
+        :param topic: Str
+        """
+        self.producer.send(topic, key=b'user_log', value=json_log)
 
-
-# 2
-"""
-DESCRIBE TOPIC FROM ANOTHER NODE (CHECK THAT CLUSTER IS WORKING EFFECTIVELY)
-
-$ /usr/local/kafka/bin/kafka-topics.sh --describe \
-    --zookeeper localhost:2181 \
-    --topic test_topic
-"""
-
-
-# 3
-"""
-USE THE CONSOLE PRODUCER TO TEST PRODUCE SOME DATA (from a third node)
-
-$ /usr/local/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test-topic
-
-ENTER SOME DATA INTO THE PRODUCER
-"""
+    # when simulating data, we will use produce_msgs instead of send_log since we won't have a source
+    # (see 'kafka advanced' in DE ecosystem)
+    def produce_msgs(self, source_symbol):
+        pass
 
 
-# producer
-user_logs_producer = KafkaProducer(bootstrap_servers=['localhost:9092'],
-                                   value_serializer=lambda x: json.dumps(x).encode('utf-8'))
-
-# help function to tail a log file, we might just 86 this and dynamically generate data in various ways
+# helper function to tail a log file, we might just 86 this and dynamically generate data in various ways
 # or use it, who knows!
 def tail_log_file(file):
     """
@@ -61,8 +51,8 @@ def tail_log_file(file):
         else:
             yield line
 
-
-for line in tail_log_file(open('LOG_FILE_PATH')):
-    user_logs_producer.send('test_topic', value=line)
+# example use case with kafka producer
+# for line in tail_log_file(open('LOG_FILE_PATH')):
+#     user_logs_producer.send('test_topic', value=line)
 
 

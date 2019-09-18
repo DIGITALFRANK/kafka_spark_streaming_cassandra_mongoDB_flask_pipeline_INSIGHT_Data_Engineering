@@ -1,8 +1,10 @@
 # INSIGHT_Data_Engineering  
 
-### kafka_spark_streaming_cassandra_mongoDB_flask_pipeline_
+### _kafka_spark_streaming_cassandra_mongoDB_flask_pipeline_
 
 ### Spark Streaming: Direct Approach (No Receivers)  
+
+(from official Spark documentation)  
 
 This new receiver-less “direct” approach has been introduced in Spark 1.3 to ensure stronger end-to-end guarantees. Instead of using receivers to receive data, this approach periodically queries Kafka for the latest offsets in each topic+partition, and accordingly defines the offset ranges to process in each batch. When the jobs to process the data are launched, Kafka’s simple consumer API is used to read the defined ranges of offsets from Kafka (similar to read files from a file system).  
 

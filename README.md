@@ -2,6 +2,10 @@
 
 ### _kafka_spark_streaming_cassandra_mongoDB_flask_pipeline_
 
+### Kafka Ingestion: Real time multi-node cluster ingestion and partitioning   
+
+blah blah blah...  
+
 ### Spark Streaming: Direct Approach (No Receivers)  
 
 (from official Spark documentation)  

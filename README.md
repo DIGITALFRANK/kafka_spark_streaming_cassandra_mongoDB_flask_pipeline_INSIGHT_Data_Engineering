@@ -2,7 +2,7 @@
 
 ### _kafka_spark_streaming_cassandra_mongoDB_flask_pipeline_
 
-### Kafka Ingestion: Real time multi-node cluster ingestion and partitioning   
+### Kafka Ingestion: Real time multi-node cluster data ingestion and partitioning   
 
 blah blah blah...  
 

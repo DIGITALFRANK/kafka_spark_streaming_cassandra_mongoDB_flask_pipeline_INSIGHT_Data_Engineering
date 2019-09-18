@@ -6,15 +6,37 @@ from json import dumps
 from kafka import KafkaProducer
 
 
+# 1
 """
 CREATE KAFKA TOPIC
-$ /usr/local/kafka/bin/kafka-topics.sh \
-    --create \
+
+$ /usr/local/kafka/bin/kafka-topics.sh --create \
     --zookeeper localhost:2181 \
     --replication-factor 3 \
-    --partitions 2 \
+    --partitions 4 \
     --topic test_topic 
 """
+
+
+# 2
+"""
+DESCRIBE TOPIC FROM ANOTHER NODE (CHECK THAT CLUSTER IS WORKING EFFECTIVELY)
+
+$ /usr/local/kafka/bin/kafka-topics.sh --describe \
+    --zookeeper localhost:2181 \
+    --topic test_topic
+"""
+
+
+# 3
+"""
+USE THE CONSOLE PRODUCER TO TEST PRODUCE SOME DATA (from a third node)
+
+$ /usr/local/kafka/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test-topic
+
+ENTER SOME DATA INTO THE PRODUCER
+"""
+
 
 # producer
 user_logs_producer = KafkaProducer(bootstrap_servers=['localhost:9092'],

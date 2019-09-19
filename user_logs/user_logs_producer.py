@@ -7,17 +7,27 @@ from kafka import KafkaProducer
 
 
 class UserLogsProducer:
+    example_json_log = {
+        "log": {
+            "source": "",
+            "type": "",
+            "datetime": "",
+            "log_user_id": "",
+            "log": ""
+        }
+    }
+
     def __init__(self, kafka_brokers):
         """
         Producer constructor, serializes json data
-        :param kafka_brokers: Str
+        :param kafka_brokers: List
         """
         self.producer = KafkaProducer(
-            value_serializer=lambda v: json.dumps(v).encode('utf-8'),
-            bootstrap_servers=kafka_brokers
+            bootstrap_servers=kafka_brokers,
+            value_serializer=lambda v: json.dumps(v).encode('utf-8')
         )
 
-    def send_log(self, json_log, topic):
+    def send_log(self, topic, json_log):
         """
         Sends single log to kafka topic as encoded json
         Requires source, use on iterable to dynamically populate kafka topic
@@ -56,3 +66,61 @@ def tail_log_file(file):
 #     user_logs_producer.send('test_topic', value=line)
 
 
+def main():
+    producer = UserLogsProducer(['localhost:9092'])
+
+    # bullshit logs / delete asap
+    log_1 = {
+        "log": {
+            "source": "1",
+            "type": "user_log",
+            "datetime": datetime.utcnow(),
+            "log_user_id": "12",
+            "log": "1"
+        }
+    }
+    log_2 = {
+        "log": {
+            "source": "2",
+            "type": "user_log",
+            "datetime": datetime.utcnow(),
+            "log_user_id": "2",
+            "log": "1"
+        }
+    }
+    log_3 = {
+        "log": {
+            "source": "1",
+            "type": "ad_view_log",
+            "datetime": datetime.utcnow(),
+            "log_user_id": "120",
+            "log": "1"
+        }
+    }
+    log_4 = {
+        "log": {
+            "source": "1",
+            "type": "user_log",
+            "datetime": datetime.utcnow(),
+            "log_user_id": "110",
+            "log": "1"
+        }
+    }
+    log_5 = {
+        "log": {
+            "source": "8",
+            "type": "ad_view_log",
+            "datetime": datetime.utcnow(),
+            "log_user_id": "112",
+            "log": "1"
+        }
+    }
+
+    test_logs = [log_1, log_2, log_3, log_4, log_5]
+
+    for log in test_logs:
+        producer.send_log("test_topic_2", log)
+
+
+if __name__ == "__main__":
+    main()

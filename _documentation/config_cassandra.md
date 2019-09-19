@@ -1,5 +1,7 @@
 # 1
 **CREATE CASSANDRA CLUSTER**  
+eithr manually or using pegasus
+
 
 # 2
 **CREATE KEYSPACE WITH REPLICATION FACTOR 3**  
@@ -10,26 +12,27 @@ Connected to AdminTome Cluster at cass1.admintome.lab:9042.
 Use HELP for help.  
 cqlsh>  
 
-
 cqlsh> CREATE KEYSPACE fitbit WITH replication =  \
 {'class': 'SimpleStrategy', 'replication_factor': '3'}  \
 AND durable_writes = true;
 
-# 3
 
+# 3
 **SELECT YOUR KEYSPACE (database)**
 
 cqlsh> USE fitbit;  
 
 **CREATE USER_LOG TABLE**
 
-
-cqlsh> CREATE TABLE fitbit.user_logs (  \
+cqlsh> CREATE TABLE user_logs (  \
 log_id timeuuid,  \
-log_user_id integer,  \
+log_user_id text,  \
 log_source text,  \
 log_type text,  \
 log text,  \
 log_datetime text,  \
 PRIMARY KEY ((log_source, log_type, log_user_id), log_id)  \
 ) WITH CLUSTERING ORDER BY (log_id DESC)  
+
+**we have 4 primary keys so that we can partition our data  
+by log_source, log_type, log_user_id, and the actual log_id unique timestamp/timeseries**

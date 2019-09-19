@@ -18,6 +18,10 @@ blah blah blah...
 
 blah blah blah...  
 
+## Persisting raw data in Cassandra (Distributed Persistence)  
+
+blah blah blah...  
+
 ## Spark Streaming: Direct Approach (No Receivers)  
 
 (from official Spark documentation)  
@@ -33,10 +37,6 @@ This approach has the following advantages over the receiver-based approach (i.e
 > **_Exactly-once semantics:_** The old approach uses Kafka’s high level API to store consumed offsets in Zookeeper. This is traditionally the way to consume data from Kafka. While this approach (in combination with write ahead logs) can ensure zero data loss (i.e. at-least once semantics), there is a small chance some records may get consumed twice under some failures. This occurs because of inconsistencies between data reliably received by Spark Streaming and offsets tracked by Zookeeper. Hence, in this second approach, we use simple Kafka API that does not use Zookeeper. Offsets are tracked by Spark Streaming within its checkpoints. This eliminates inconsistencies between Spark Streaming and Zookeeper/Kafka, and so each record is received by Spark Streaming effectively exactly once despite failures. In order to achieve exactly-once semantics for output of your results, your output operation that saves the data to an external data store must be either idempotent, or an atomic transaction that saves results and offsets.  
 
 Note that one disadvantage of this approach is that it does not update offsets in Zookeeper, hence Zookeeper-based Kafka monitoring tools will not show progress. However, you can access the offsets processed by this approach in each batch and update Zookeeper yourself.  
-
-## Persisting raw data in Cassandra (Distributed Persistence)  
-
-blah blah blah...  
 
 ## Spark Structured Streaming and data processing  
 

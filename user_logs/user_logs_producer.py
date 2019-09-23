@@ -9,11 +9,14 @@ from kafka import KafkaProducer
 class UserLogsProducer:
     example_json_log = {
         "log": {
-            "source": "",
-            "type": "",
-            "datetime": "",
-            "log_user_id": "",
-            "log": ""
+            "log_source": "3",  # user log aggragation geo-locaiton source (8 regions)
+            "log_type": "",  # I'm not sure how I'll use this yet
+            "log_datetime": "2019-09-19 18:29:34.653688",  # datetimestamp of log
+            "log_lon": "40.7128° N",  # geo-locaiton data
+            "log_lat": "74.0060° W",  # geo-locaiton data
+            "log_user_id": "1205670",  # log user id
+            "log_id": "12035",  # unique log id, may be a time unique id (timeuuid)
+            "log": "1"  # binary activity indicator, 0: inactive, 1: active
         }
     }
 

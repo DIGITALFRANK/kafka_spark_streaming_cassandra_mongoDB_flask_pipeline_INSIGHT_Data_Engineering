@@ -1,0 +1,3 @@
+echo "######## Initializing data streamer... #######"
+
+python data_streamer.py

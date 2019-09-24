@@ -7,19 +7,6 @@ from kafka import KafkaProducer
 
 
 class UserLogsProducer:
-    example_json_log = {
-        "log": {
-            "log_source": "3",  # user log aggragation geo-locaiton source (8 regions)
-            "log_type": "",  # I'm not sure how I'll use this yet
-            "log_datetime": "2019-09-19 18:29:34.653688",  # datetimestamp of log
-            "log_lon": "40.7128° N",  # geo-locaiton data
-            "log_lat": "74.0060° W",  # geo-locaiton data
-            "log_user_id": "1205670",  # log user id
-            "log_id": "12035",  # unique log id, may be a time unique id (timeuuid)
-            "log": "1"  # binary activity indicator, 0: inactive, 1: active
-        }
-    }
-
     def __init__(self, kafka_brokers):
         """
         Producer constructor, serializes json data
@@ -41,8 +28,9 @@ class UserLogsProducer:
 
     # when simulating data, we will use produce_msgs instead of send_log since we won't have a source
     # (see 'kafka advanced' in DE ecosystem)
-    def produce_msgs(self, source_symbol):
-        pass
+    def produce_msgs(self):
+        for line in tail_log_file(open('../data/user_logs.log')):
+            self.producer.send('test_topic', value=line)
 
 
 # helper function to tail a log file, we might just 86 this and dynamically generate data in various ways
@@ -71,58 +59,7 @@ def tail_log_file(file):
 
 def main():
     producer = UserLogsProducer(['localhost:9092'])
-
-    # bullshit logs / delete asap
-    log_1 = {
-        "log": {
-            "source": "1",
-            "type": "user_log",
-            "datetime": datetime.utcnow(),
-            "log_user_id": "12",
-            "log": "1"
-        }
-    }
-    log_2 = {
-        "log": {
-            "source": "2",
-            "type": "user_log",
-            "datetime": datetime.utcnow(),
-            "log_user_id": "2",
-            "log": "1"
-        }
-    }
-    log_3 = {
-        "log": {
-            "source": "1",
-            "type": "ad_view_log",
-            "datetime": datetime.utcnow(),
-            "log_user_id": "120",
-            "log": "1"
-        }
-    }
-    log_4 = {
-        "log": {
-            "source": "1",
-            "type": "user_log",
-            "datetime": datetime.utcnow(),
-            "log_user_id": "110",
-            "log": "1"
-        }
-    }
-    log_5 = {
-        "log": {
-            "source": "8",
-            "type": "ad_view_log",
-            "datetime": datetime.utcnow(),
-            "log_user_id": "112",
-            "log": "1"
-        }
-    }
-
-    test_logs = [log_1, log_2, log_3, log_4, log_5]
-
-    for log in test_logs:
-        producer.send_log("test_topic_2", log)
+    producer.produce_msgs()
 
 
 if __name__ == "__main__":

@@ -2,13 +2,31 @@
 
 ## _kafka_spark_streaming_cassandra_mongoDB_flask_real_time_data_pipeline_
 
-### Problem definition  
+# AdME
+### a real time event-driven advertising platform for digital products at scale  
 
-blah blah blah...  
+## Problem definition  
 
-### Solution  
+Advertisers need to work at the speed of data.  
 
-blah blah blah...  
+For example, picture a mobile app, at scale, with millions of users. 
+Users interact with the app in real-time and generate millions if not billions of data points per second. 
+
+It is difficult for product owners and advertisers to consume and utilize this data due to its velocity.  
+
+In addition, acting on ad targeting opportunities, or measuring the preciseness of targeting efforts 
+is also a bigger challenge when user event data isn't captured in real time.
+
+## Solution  
+
+Working with user logs and geo-location data, 
+AdME is a platform that allows product owners to track user activity & location 
+in real time with a live map view and custom analytics dashboard.  
+
+By leveraging this data in real-time, 
+product owners and advertisers can derive stronger ad budgeting and targeting insights, 
+as well as act more swiftly on advertising opportunities  
+
 
 ## Pipline Architecture  
 

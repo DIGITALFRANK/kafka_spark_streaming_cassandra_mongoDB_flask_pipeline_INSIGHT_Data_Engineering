@@ -41,3 +41,6 @@ if __name__ == "__main__":
 
     ssc.start()
     ssc.awaitTermination()
+
+# Kafka-connect to SQLite for users table
+# Spark Streaming subscribe to user_logs topic

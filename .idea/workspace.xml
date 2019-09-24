@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8917262-36c0-4900-8387-3d81d4c036c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/stream_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_streamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_streamer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/user_logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/user_logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/users.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_data/test_user_log_stream.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test_data/test_user_log_stream.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_logs/stream_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_logs/stream_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_logs/user_logs_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_logs/user_logs_producer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,64 +33,64 @@
         <counts>
           <entry key="generate" value="3" />
           <entry key="log" value="3" />
-          <entry key="md" value="3" />
-          <entry key="py" value="10" />
+          <entry key="md" value="4" />
+          <entry key="py" value="15" />
           <entry key="reset" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Log" value="2" />
-          <entry key="Markdown" value="3" />
+          <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="10" />
+          <entry key="Python" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="656" />
-          <entry key="py" value="5947" />
+          <entry key="Python Console" value="8" />
+          <entry key="md" value="1920" />
+          <entry key="py" value="6191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="656" />
-          <entry key="Python" value="5947" />
+          <entry key="Markdown" value="1920" />
+          <entry key="Python" value="6199" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_streamer.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user_logs/stream_processor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+            <state relative-caret-position="882">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stream_processor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1569334780185" expanded="true" signature="1134:1413" ph="..." />
-                <marker date="1569334780185" expanded="true" signature="2090:2340" ph="..." />
-                <marker date="1569334780185" expanded="true" signature="3042:3438" ph="..." />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/user_logs.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-3214" />
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_data/start_user_log_stream.py">
+        <entry file="file://$PROJECT_DIR$/user_logs/user_logs_producer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="59" />
+            <state relative-caret-position="838">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,11 +115,13 @@
         <option value="$PROJECT_DIR$/_documentation/config_cassandra.md" />
         <option value="$PROJECT_DIR$/user_logs/cassandra_consumer.py" />
         <option value="$PROJECT_DIR$/users/users_producer.py" />
-        <option value="$PROJECT_DIR$/user_logs/stream_processor.py" />
-        <option value="$PROJECT_DIR$/user_logs/user_logs_producer.py" />
         <option value="$PROJECT_DIR$/test_data/start_user_log_stream.py" />
         <option value="$PROJECT_DIR$/bin/reset" />
         <option value="$PROJECT_DIR$/data_streamer.py" />
+        <option value="$PROJECT_DIR$/user_logs/stream_processor.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/stream_processor.py" />
+        <option value="$PROJECT_DIR$/user_logs/user_logs_producer.py" />
       </list>
     </option>
   </component>
@@ -126,10 +135,13 @@
       <profile-state>
         <expanded-state>
           <State />
+          <State>
+            <id>Python</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>Spelling</id>
+            <id>PyClassicStyleClassInspection</id>
           </State>
         </selected-state>
       </profile-state>
@@ -151,33 +163,36 @@
             <path>
               <item name="_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="_project" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="_project" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="_project" type="462c0819:PsiDirectoryNode" />
-              <item name="test_data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="_project" type="462c0819:PsiDirectoryNode" />
               <item name="user_logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="_project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="_project" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="_project" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -224,9 +239,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3297062" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3297062" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3297062" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -243,13 +258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user_logs/user_logs_producer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -280,13 +288,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user_logs/stream_processor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="91" selection-start-line="17" selection-start-column="91" selection-end-line="17" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user_logs/user_logs_consumer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -301,9 +302,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/generate">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/user_logs.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-17936" />
+      </provider>
+      <provider editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_data/start_user_log_stream.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
+        <state relative-caret-position="-250">
           <caret line="24" column="59" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="59" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -311,12 +321,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/generate">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="252">
+            <caret line="12" column="98" selection-start-line="12" selection-start-column="98" selection-end-line="12" selection-end-column="98" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data_streamer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
+        <state relative-caret-position="1092">
           <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -327,11 +344,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/user_logs.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-3214" />
+    <entry file="file://$PROJECT_DIR$/user_logs/user_logs_producer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="838">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
-      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stream_processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_logs/stream_processor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

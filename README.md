@@ -4,11 +4,11 @@
 
 ### Problem definition  
 
-blah blah blah...  
+- ...  
 
 ### Solution  
 
-blah blah blah...  
+- ...  
 
 ## Pipline Architecture  
 
@@ -16,11 +16,11 @@ blah blah blah...
 
 ## Kafka Ingestion: Real time multi-node cluster data ingestion and partitioning   
 
-blah blah blah...  
+- ...  
 
 ## Persisting raw data in Cassandra (Distributed Persistence)  
 
-blah blah blah...  
+- ...  
 
 ## Spark Streaming: Direct Approach (No Receivers)  
 
@@ -40,7 +40,7 @@ Note that one disadvantage of this approach is that it does not update offsets i
 
 ## Spark Structured Streaming and data processing  
 
-blah blah blah...  
+- ...  
 
 ## Front End UI 
 
